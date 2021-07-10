@@ -1,0 +1,13 @@
+name: Build Web App
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.17.0
+      - run: npm install
+      - run: npm run build
