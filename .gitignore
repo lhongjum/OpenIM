@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
-/desktop/dist
+dist
 
 
 # local env files
@@ -23,7 +23,7 @@ pnpm-debug.log*
 *.sw?
 
 #Electron-builder output
-/desktop/dist_electron
+dist_electron
 
 
 
