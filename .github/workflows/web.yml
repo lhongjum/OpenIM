@@ -9,5 +9,5 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.17.0
-      - run: cd desktop && npm install
-      - run: cd desktop && npm run build
+      - run: cd open_im_web && npm install
+      - run: cd open_im_web && npm run build

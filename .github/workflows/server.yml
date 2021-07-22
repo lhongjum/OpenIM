@@ -5,13 +5,13 @@ jobs:
   build:
     strategy:
       matrix:
-        go: ['1.14', '1.15', '1.16']
-        os: ['windows-latest', 'macos-latest', 'ubuntu-latest']
+        go: ['1.16']
+        os: ['ubuntu-latest']
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v2
         with:
           go-version: ${{ matrix.go }}
-      - run: go test -v ./...
-      - run: go build
+      - run: cd backend && go test -v ./...
+      - run: cd backend && go build

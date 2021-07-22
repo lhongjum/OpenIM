@@ -1,0 +1,60 @@
+# name: Build Mobile App
+# on: [push, pull_request]
+
+
+# jobs:
+#   drive_ios:
+#     strategy:
+#       matrix:
+#         device:
+#           - 'iPhone 8'
+#           - 'iPhone 12'
+#       fail-fast: false
+#     runs-on: macos-latest
+#     steps:
+#       - name: 'Simulator'
+#         uses: futureware-tech/simulator-action@v1
+#         with:
+#           model: ${{ matrix.device }}
+#           erase_before_boot: true
+#           shutdown_after_job: true
+#       - uses: actions/checkout@v2
+#       - uses: subosito/flutter-action@v1
+#         with:
+#           flutter-version: '2.2.3'
+#           channel: 'stable'
+#       - name: 'Start Flutter Driver tests - iOS'
+#         run: 'flutter drive --target=test/driver/driver.dart'
+
+#   drive_android:
+#     runs-on: macos-latest
+#     strategy:
+#       matrix:
+#         api-level: [21, 29]
+#         target: [default]
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: subosito/flutter-action@v1
+#         with:
+#           flutter-version: '2.2.3'
+#           channel: 'stable'
+#       - name: 'Start Flutter Driver tests - Android'
+#         uses: reactivecircus/android-emulator-runner@v2
+#         with:
+#           api-level: ${{ matrix.api-level }}
+#           target: ${{ matrix.target }}
+#           arch: x86_64
+#           profile: Nexus 6
+#           script: 'flutter drive --target=test/driver/driver.dart'
+
+#   accessibility_test:
+#     runs-on: macos-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: subosito/flutter-action@v1
+#         with:
+#           flutter-version: '2.2.3'
+#           channel: 'stable'
+#       - run: 'flutter pub get'
+#       - name: 'Start Flutter Accessibility Tests'
+#         run: 'flutter test test/accessibility/accessibility.dart'
