@@ -37,6 +37,7 @@ class _CoreState extends State<Core> {
       locale: Preview.locale(context),
       getPages: RouterX.routes,
       initialRoute: RouterX.initRoute,
+      defaultTransition: RouterX.transition,
       theme: ThemeX.lightGlobal,
       title: AppMeta.name,
     );

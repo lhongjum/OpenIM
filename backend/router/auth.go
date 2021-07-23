@@ -3,6 +3,6 @@ package router
 import "github.com/gin-gonic/gin"
 
 
-func setAuthRoutes(r *gin.Engine) {
+func setAuthRoutes(r *gin.RouterGroup) {
 
 }

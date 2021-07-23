@@ -56,3 +56,5 @@ flutter_icons:  # flutter pub run flutter_launcher_icons:main
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/icon/
